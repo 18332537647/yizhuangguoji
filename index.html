@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="北京亦庄国际产业创新管理有限公司 亦庄国际 产业创新 云岗网 亦庄 创新 服务">
+    <meta name="description" content="北京亦庄国际产业创新管理有限公司 亦庄国际 产业创新 云岗网 亦庄 创新 服务">
+    <title>亦庄国际创新管理有限公司</title>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/work.js"></script>
+    <script type="text/javascript" src="js/jquery.js" /></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--Luara js文件-->
+    <script src="js/jquery.luara.0.0.1.min.js"></script>
+    <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script async src="http://c.cnzz.com/core.php"></script>
+    <script src="js/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    // banner轮播图
+    function banner() {
+        var bn_id = 0;
+        var bn_id2 = 1;
+        var speed33 = 2000;
+        var qhjg = 1;
+        var MyMar33;
+        $("#banner .d1").hide();
+        $("#banner .d1").eq(0).fadeIn("slow");
+        if ($("#banner .d1").length > 1) {
+            $("#banner_id li").eq(0).addClass("nuw");
+
+            function Marquee33() {
+                bn_id2 = bn_id + 1;
+                if (bn_id2 > $("#banner .d1").length - 1) {
+                    bn_id2 = 0;
+                }
+                $("#banner .d1").eq(bn_id).css("z-index", "2");
+                $("#banner .d1").eq(bn_id2).css("z-index", "1");
+                $("#banner .d1").eq(bn_id2).show();
+                $("#banner .d1").eq(bn_id).fadeOut("slow");
+                $("#banner_id li").removeClass("nuw");
+                $("#banner_id li").eq(bn_id2).addClass("nuw");
+                bn_id = bn_id2;
+            };
+
+            MyMar33 = setInterval(Marquee33, speed33);
+
+            $("#banner_id li").click(function() {
+                var bn_id3 = $("#banner_id li").index(this);
+                if (bn_id3 != bn_id && qhjg == 1) {
+                    qhjg = 0;
+                    $("#banner .d1").eq(bn_id).css("z-index", "2");
+                    $("#banner .d1").eq(bn_id3).css("z-index", "1");
+                    $("#banner .d1").eq(bn_id3).show();
+                    $("#banner .d1").eq(bn_id).fadeOut("slow", function() {
+                        qhjg = 1;
+                    });
+                    $("#banner_id li").removeClass("nuw");
+                    $("#banner_id li").eq(bn_id3).addClass("nuw");
+                    bn_id = bn_id3;
+                }
+            })
+            $("#banner_id").hover(
+                function() {
+                    clearInterval(MyMar33);
+                },
+                function() {
+                    MyMar33 = setInterval(Marquee33, speed33);
+                }
+            )
+        } else {
+            $("#banner_id").hide();
+        }
+    }
+
+
+    // index页合作伙伴无缝滚动
+    $(function() {
+
+        var $c = $('#carousel'),
+            $w = $(window);
+
+        $c.carouFredSel({
+            align: false,
+            items: 4,
+            scroll: {
+                items: 1,
+                duration: 2000,
+                timeoutDuration: 0,
+                easing: 'linear',
+                pauseOnHover: 'immediate'
+            }
+        });
+
+        $w.bind('resize.example', function() {
+            var nw = $w.width();
+            if (nw < 990) {
+                nw = 990;
+            }
+
+            $c.width(nw * 3);
+            $c.parent().width(nw);
+
+        }).trigger('resize.example');
+
+
+
+        // 搜索框搜索功能
+        $(function() {
+            $(document).keydown(function(event) {
+                if (event.keyCode == 13) {
+                    $(".search-but").click();
+                }
+            });
+
+            $(".search-but").click(function() {
+                var val = $(".search-text").val();
+                switch (val) {
+                    case val = "关于我们":
+                        window.location = "about us.html";
+                        break;
+                    case val = "新闻动态":
+                        window.location = "news.html";
+                        break;
+                    case val = "新闻":
+                        window.location = "news.html";
+                        break;
+                    case val = "欧盟":
+                        window.location = "globa2.html";
+                        break;
+                    case val = "全球创新云":
+                        window.location = "globa2.html";
+                        break;
+                    case val = "创新云":
+                        window.location = "news.html";
+                        break;
+                    case val = "全球创新港":
+                        window.location = "global1.html";
+                        break;
+                    case val = "创新港":
+                        window.location = "global1.html";
+                        break;
+                    case val = "核心业务":
+                        window.location = "operation.html";
+                        break;
+                    case val = "运营模式":
+                        window.location = "operation.html";
+                        break;
+                    case val = "社区服务网":
+                        window.location = "service.html";
+                        break;
+                    case val = "服务网":
+                        window.location = "service.html";
+                        break;
+                    case val = "样板社区":
+                        window.location = "community.html";
+                        break;
+                    case val = "社区":
+                        window.location = "community.html";
+                        break;
+                    case val = "加入我们":
+                        window.location = "talents.html";
+                        break;
+                    case val = "人才招聘":
+                        window.location = "talents.html";
+                        break;
+                    case val = "联系我们":
+                        window.location = "contact.html";
+                        break;
+                }
+            })
+
+        })
+
+
+    });
+    </script>
+</head>
+
+<body>
+    <div class="all">
+        <div class="top">
+            <div class="top_le"><img src="images/logo.png" alt="logo"></div>
+            <div class="top_ri">
+                <p style="display:block;">
+                    <B>服务热线：010-6783&nbsp2771</B>
+                </p>
+                <p class="serch">
+                    <input type="search" class="search-text">
+                    <a href="#"><img src="images/search11_02.jpg" alt="按钮" class="search-but"></a>
+                </p>
+            </div>
+        </div>
+        <div id="nav">
+            <div class="navbg" style="margin:0 auto;">
+                <div class="col960">
+                    <ul id="navul" class="cl">
+                        <li><a href="index.html" target="_blank">首页</a></li>
+                        <li><a href="about us.html" target="_blank" title="关于我们">关于我们</a>
+                        </li>
+                        <li><a href="operation.html" title="核心业务" style="">核心业务</a>
+                            <ul>
+                                <li><a href="operation.html" target="_blank" title="运营模式">运营模式</a></li>
+                                <li><a href="global1.html" target="_blank" title="全球创新云">全球创新云</a></li>
+                                <li><a href="global2.html" target="_blank" title="全球创新港">全球创新港</a></li>
+                                <li><a href="service.html" target="_blank" title="企业社区服务网">企业社区服务网</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="community.html" target="_blank" title="样板社区" style="">样板社区</a>
+                        </li>
+                        <li><a href="news.html" target="_blank" title="新闻动态" style="">新闻动态</a>
+                        </li>
+                        <li><a href="talents.html" title="加入我们" style="">加入我们</a>
+                            <ul style="color: yellow">
+                                <li><a href="talents.html " target="_blank" title="人才招聘">人才招聘</a></li>
+                                <li><a href="contact.html" target="_blank" title="联系我们">联系我们</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="banner" id="banner">
+            <a href="#" class="d1" style="background:url(images/banner1.jpg) center no-repeat;"></a>
+            <a href="#" class="d1" style="background:url(images/banner22.jpg) center no-repeat;"></a>
+            <a href="#" class="d1" style="background:url(images/banner3.jpg) center no-repeat;"></a>
+            <a href="#" class="d1" style="background:url(images/banner4.jpg) center no-repeat;"></a>
+            <div class="d2" id="banner_id">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+        banner()
+        </script>
+        <div class="clear"></div>
+        <section>
+            <div class="content">
+                <img src="images/板式1首页_043.png" alt="图片1" style="margin-top: 30px;margin-left: 10px;">
+                <div class="fir">
+                    <a href="global2.html"><img src="images/01.gif" alt="2"></a>
+                    <a href="global1.html"><img src="images/02.gif" alt="3"></a>
+                    <a href="service.html"><img src="images/03.png" alt="4"></a>
+                </div>
+                <div class="clear"></div>
+                <div class="sec">
+                    <div class="sec_1">
+                        <a href="news.html"><img src="images/板式1首页_03.png" alt="图片1" style="margin-left: 10px;"></a>
+                        <div class="clear"></div>
+                        <div class="small">
+                            <div class="example">
+                                <ul>
+                                    <li><img src="images/1.jpg" alt="1" /></li>
+                                    <li><img src="images/lunbo-2.png" alt="2" /></li>
+                                    <li><img src="images/33.jpg" alt="3" /></li>
+                                    <li><img src="images/new222.jpg" alt="4" /></li>
+                                </ul>
+                                <ol>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ol>
+                            </div>
+                            <!--Luara图片切换骨架end-->
+                            <script>
+                            $(function() {
+                                <!--调用Luara示例-->
+                                $(".example").luara({
+                                    width: "344",
+                                    height: "200",
+                                    interval: 4000,
+                                    selected: "seleted"
+                                });
+
+                            });
+                            </script>
+                        </div>
+                        <div class="new">
+                            <ul>
+                                <li><a href="news1.html" title="亦庄国际产业创新管理有限公司首届董事会第一次会议报道">亦庄国际产业创新管理有限公司首届...</a></li>
+                                <a href="">
+                                    <p>2016-03-28</p>
+                                </a>
+                                <li><a href="news2.html" title="欧盟中国经济委员会来我司进行参观考察">欧盟中国经济委员会来我司进行参观</a></li>
+                                <a href="">
+                                    <p>2016-04-13</p>
+                                </a>
+                                <li><a href="news1.html" title="亦庄国际产业创新管理有限公司首届董事会第一次会议报道">亦庄国际产业创新管理有限公司首届...</a></li>
+                                <a href="">
+                                    <p>2016-03-28</p>
+                                </a>
+                                <li><a href="news2.html" title="欧盟中国经济委员会来我司进行参观考察">欧盟中国经济委员会来我司进行参观</a> </li>
+                                <a href="">
+                                    <p>2016-04-13</p>
+                                </a>
+                                <li><a href="news1.html" title="亦庄国际产业创新管理有限公司首届董事会第一次会议报道">亦庄国际产业创新管理有限公司首届...</a> </li>
+                                <p>2016-03-28</p>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sec_2">
+                        <a href="about us.html"><img src="images/板式1首页_05.png" alt="图片1" style="margin-left: 10px;display: inline-block;"></a>
+                        <div id="andyscroll">
+                            <div id="scrollmessage">
+                                <UL>
+                                    <li><a href="about us.html"> 北京亦庄国际产业创新管理有限公司。是由中国集团公司促进会发起，北京经济技术投资开发总公司及中企产城投资有限公司合作成立，并联合国际、国内众多相关产业技术创新、行业组织、投资机构、金融机构以及资本服务机构等共同打造的第三方产业服务平台公司。同时也是基于互联网以及现代信息智能化技术为支撑，专门从事在全球范围内、具有广泛要素资源整合能力的、服务于中国城市产业创新的全域覆盖、立体化、全要素支撑的第三方产业服务平台公司。</a></li>
+                                    <ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="thr">
+                    <div class="top">
+                        <p><img src="images/板式1首页_14.png" alt=""></p>
+                        <div id="wrapper">
+                            <div id="carousel">
+                                <div>
+                                    <img src="images/112.png" alt="合作伙伴" width="150" height="30" />
+                                </div>
+                                <div>
+                                    <img src="images/113.png" alt="合作伙伴" width="150" height="30" />
+                                </div>
+                                <div>
+                                    <img src="images/114.png" alt="合作伙伴" width="150" height="30" />
+                                </div>
+                                <div>
+                                    <img src="images/222.png" alt="合作伙伴" width="150" height="30" />
+                                </div>
+                                <div>
+                                    <img src="images/116.png" alt="合作伙伴" width="150" height="30" />
+                                </div>
+                                <!-- <div>
+    <img src="images/112.png" alt="合作伙伴" width="150" height="30" />
+</div>
+ -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <p classs="p1"><img src="images/板式1首页_17.png" alt=""></p>
+                        <p class="p2"><a href="talents.html">平面设计</a> <a href="talents.html">网站新闻编辑/文案</a> <a href="talents.html">写字楼/招商顾问</a> <a href="talents.html">高级媒介经理</a></p>
+                    </div>
+                </div>
+        </section>
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-left">
+                    <p class="p2">地址：北京市北京经济技术开发区荣华中路10号A座26层</p>
+                    <p class="p1">版权所有：北京亦庄国际产业创新管理有限公司 &nbsp京ICP备15043299号
+                    </p>
+                </div>
+                <div class="footer-right">
+                    <div id="map">
+                    </div>
+                    <img src="images/微信_01.jpg" alt="" class="img2">
+                    <img src="images/weibo1_01.jpg" alt="" class="img2">
+                </div>
+            </div>
+        </footer>
+</body>
+<script type="text/javascript">
+var stopscroll = false;
+var scrollElem = document.getElementById("andyscroll");
+var marqueesHeight = scrollElem.style.height;
+scrollElem.onmouseover = new Function('stopscroll = true');
+scrollElem.onmouseout = new Function('stopscroll = false');
+var preTop = 0;
+var currentTop = 0;
+var stoptime = 0;
+var leftElem = document.getElementById("scrollmessage");
+scrollElem.appendChild(leftElem.cloneNode(true));
+init_srolltext();
+
+function init_srolltext() {
+    scrollElem.scrollTop = 0;
+    setInterval('scrollUp()', 85); //确定滚动速度的, 数值越小, 速度越快
+}
+
+function scrollUp() {
+    if (stopscroll) return;
+    currentTop += 2; //设为1, 可以实现间歇式的滚动; 设为2, 则是连续滚动
+    if (currentTop == 19) {
+        stoptime += 1;
+        currentTop -= 1;
+        if (stoptime == 1) {
+            currentTop = 0;
+            stoptime = 0;
+        }
+    } else {
+        preTop = scrollElem.scrollTop;
+        scrollElem.scrollTop += 1;
+        if (preTop == scrollElem.scrollTop) {
+            scrollElem.scrollTop = 0;
+            scrollElem.scrollTop += 1;
+        }
+    }
+}
+</script>
+<script src="js/map.js"></script>
+
+</html>
